@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Weather website</title>
+  </head>
+<body>
+  <div class="background">
+    <div class="center-container">
+      <div class="square">
+        
+        <div class="inner-container">
+          <div class="slideshow-container">
+              <div class="mySlides">
+                <img id="cityphoto" src="newyork.jpg" style="border-radius:30px;">
+                <p class="temp">27°</p>
+                <i class="material-icons" id="add">add_circle</i>
+              </div>
+              <div class="mySlides">
+                <img id="cityphoto" src="delhi.avif" style="border-radius:30px;">
+                <p class="temp">38°</p>
+                <i class="material-icons" id="add">add_circle</i>
+              </div>
+              <div class="mySlides">
+                <img id="cityphoto" src="paris.jpg" style="border-radius:30px;">
+                <p class="temp">24°</p>
+                <i class="material-icons" id="add">add_circle</i>
+              </div>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>  
+              <script>
+                  let slideIndex = 1;
+                  showSlides(slideIndex);
+
+                  function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                  let i;
+                  let slides = document.getElementsByClassName("mySlides");
+                  let dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) {slideIndex = 1}
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";
+                  dots[slideIndex-1].className += " active";
+                }
+              </script>
+              <div class="info-container">
+                <p class="info-text">Welcome back Isabella!</p>
+                <p class="info-desc">Check out today's weather information</p>
+                <div class="dots"></div>
+                <img src="isabella.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="chart-container">
+                  <div class="chart">
+                    <div class="base-line"></div>
+                  </div>
+                </div>
+                <script>
+                 const chartContainer = document.querySelector(".chart-container");
+                  const chart = document.querySelector(".chart");
+                  const baseLine = document.querySelector(".base-line");
+
+                  const hours = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
+                  const values = [0.2, 0.5, 0.8, 0.6, 0.4, 0.7, 0.3, 0.9, 0.5]; // Sample data
+
+                  const lineSpacing = 100 / (hours.length - 1); // Calculate the spacing between lines
+
+                  for (let i = 0; i < hours.length; i++) {
+                    if (values[i] >= 0) { // Display only positive values
+                      const line = document.createElement("div");
+                      line.classList.add("chart-line");
+                      line.style.left = `${i * lineSpacing}%`;
+
+                      const point = document.createElement("div");
+                      point.classList.add("chart-point");
+                      point.style.left = `${i * lineSpacing}%`;
+                      point.style.bottom = `${values[i] * 100}%`;
+
+                      chart.appendChild(line);
+                      chart.appendChild(point);
+                    }
+                  }
+              </script>
+              <p class="chart-text">More details of today's weather</p>
+              <div class="box-container">
+                <div class="box">
+                  <i class="material-icons box-icon">info</i>
+                  <p class="box-text">Box 1</p>
+                </div>
+                <div class="box">
+                  <i class="material-icons box-icon">info</i>
+                  <p class="box-text">Box 2</p>
+                </div>
+                <div class="box">
+                  <i class="material-icons box-icon">info</i>
+                  <p class="box-text">Box 3</p>
+                </div>
+              </div>
+              <div class="box-container">
+                <div class="box">
+                  <i class="material-icons box-icon">info</i>
+                  <p class="box-text">Box 4</p>
+                </div>
+                <div class="box">
+                  <i class="material-icons box-icon">info</i>
+                  <p class="box-text">Box 5</p>
+                </div>
+                <div class="box">
+                  <i class="material-icons box-icon">info</i>
+                  <p class="box-text">Box 6</p>
+                </div>
+              </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
+  

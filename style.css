@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Nunito&family=Nunito+Sans:opsz,wght@6..12,300&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    background-color: #000000; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Occupies full height of the viewport */
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* Adjust the width as needed */
+    height: 100%;
+}
+
+.square {
+    width: 80%; /* Set the width and height of the square */
+    height: 100vh;
+    background-color: #B5D8FF; /* Square color */
+    position: relative;
+}
+
+.inner-container {
+    width:83%;
+    height:80%;
+    background-color:white; /* Semi-transparent white background */
+    border-radius: 30px; /* Rounded edges */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+    margin: 8% 0 0 8%;
+}
+
+#cityphoto{
+  width: 100%;
+  height: 100%;
+}
+.slideshow-container {
+  max-width: 35%;
+  height:80%;
+  position: absolute;
+  margin: auto;
+  z-index:0;
+}
+
+.mySlides {
+  display: none;
+  height:100%;
+  width:81%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  width: 45%;
+  margin-left:5%;
+  color: white;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  top:25%;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.temp{
+  text-align: center;
+  font-size: 65px;
+  position: absolute;
+  bottom: 55%;
+  left: 20%;
+  color:white;
+}
+
+.text {
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
+  font-size: 20px;
+  position: absolute;
+  left: 450px;
+  top: 50px;
+  width: 50%;
+  text-align: left;
+  padding-top: 100px;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+#add{
+  position:relative;
+  font-size:25px;
+  color:white;
+  margin-bottom:100%;
+  top: -570px;
+  left: 7%;
+}
+.info-container {
+  position: absolute;
+  width: 62%;
+  height: 80%;
+  right: -22%;
+  background-color: #E4F1FF;
+  border-radius: 30px;
+  margin: 0 30%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1; 
+}
+.info-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-align: left;
+  font-size: 12px;
+  margin-top: 5%; /* Adjust the margin as needed */
+  margin-left: 5%;
+  color: #000000; /* Text color */
+}
+.info-desc {
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+  font-weight:bold;
+  font-size: 10px;
+  margin-top: -1%;
+  margin-left: 5%;
+  color: #000000; 
+}
+.dots {
+  content: "\2026\2026\2026"; /* Unicode for three dots */
+  font-size: 20px;
+  margin-right: 10px;
+  color: #000000; /* Adjust the color of the dots */
+  display: inline-block; /* Make sure dots are inline with the text */
+  vertical-align: middle;
+  margin-top: -2%;
+}
+
+.profile-pic {
+  width: 5%; 
+  height: 5%;
+  border-radius: 35%; 
+  margin-left: 87%;
+  margin-top: -12%; 
+  display: inline-block;
+  vertical-align: middle;
+}
+.chart-container {
+  width: 88%;
+  height: 30%;
+  margin-left: 5%;
+  margin-top:1%;
+  background-color: #F9F9F9;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  right: 0;
+}
+
+.chart {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.base-line {
+  position: absolute;
+  width: 100%;
+  bottom: 50%; /* Position the base line vertically */
+  height: 2px;
+  background-color: #00AEEF;
+}
+
+.chart-line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: #FF5733;
+}
+
+.chart-point {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #FF5733;
+  transform: translate(-50%, 50%);
+}
+.chart-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  position: absolute;
+  margin-top:5%;
+  left: 20%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #000000; 
+}
+
+.box-container {
+  margin-top:7%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2%;
+}
+.box {
+  width: 25%;
+  height: 30%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 2%;
+  position: relative;
+  box-shadow: 0px 0px 1% rgba(0, 0, 0, 0.2);
+  padding: 2%;
+}
+.box-icon {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  font-size: 2.5%;
+  color: #FF5733;
+}
+.box-text {
+  font-size: 2.5%;
+  margin-top: 2%;
+}
